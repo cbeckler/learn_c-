@@ -54,6 +54,7 @@ int main(){
             std::cout << planet << " is not a valid input. Please enter a number from 1 to 8.\n";
     }
 
+    // only print answer if planet var is in valid range
     if (planet == std::clamp(planet, 1, 8)) {
         std::cout << "Your weight on " << planet_name << " is " << space << "lbs.\n";
     }
