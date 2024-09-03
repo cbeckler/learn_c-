@@ -1,3 +1,5 @@
+// program to play rock paper scissors lizard spock
+
 #include <iostream>
 #include <random>
 #include <string>
