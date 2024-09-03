@@ -3,6 +3,8 @@
 
 int main() {
 
+    std::cout << "MAGIC 8-BALL:\n";
+
     std::random_device rd; //obtain random number
     std::mt19937 gen(rd()); // seed
     std:: uniform_int_distribution<> distr(1,20); // range
