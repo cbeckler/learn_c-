@@ -7,9 +7,9 @@ int main(){
     int choice3;
     int choice4;
 
-    std::cout << "You're walking on a lonely road. You come upon a fork in the path.\n";
+    std::cout << "\nYou're walking on a lonely road. You come upon a fork in the path.\n";
     std::cout << "One one side, the path goes into a forest, overgrown and wild. \n";
-    std::cout << "On the other side, the path leads to a cave, dark and deep. \n";
+    std::cout << "On the other side, the path leads to a cave, dark and deep. \n\n";
     std::cout << "Which way will you go? Enter 1 for the forest or 2 for the cave.\n\n";
 
     std::cin >> choice1;
@@ -24,6 +24,11 @@ int main(){
 
     do 
    {
+
+    if (choice1==2){
+        break;
+    }
+
         std::cout << "\nThe forest feels forboding around you, and you hear a growl to your left.\n";
         std::cout << "You could confront the growl, climb a tree, or run away.\n";
         std::cout << "What do you choose? 1 for confront, 2 for climb a tree, or 3 for run away.\n\n";
@@ -48,6 +53,7 @@ int main(){
             if (choice2==1){
                 std::cout << "\nThe great beast leaps and tears your throat out! You die.\n\n";
                 std::cout << "Game over.\n";
+                choice1=0;
             }
 
             else if (choice2==2){
@@ -67,7 +73,7 @@ int main(){
 
                 if (choice3==1){
                     std::cout << "\nIn the forest you see two possibilities to investigate. One is a cabin and one is something glinting on top of a cliff.\n";
-                    std::cout << "Which do you go to? Enter 1 for the cabin and 2 for the cliff.\n\n";
+                    std::cout << "Which do you go to? Enter 1 for the cabin or 2 for the cliff.\n\n";
                     std::cin >> choice4;
                 
 
@@ -100,8 +106,8 @@ int main(){
             }
             else if (choice2==3){
                 std::cout << "\nYou race through the forest until you can't hear the beast chasing you.\n";
-                std::cout << "When you stop, you see two possibilities to investigate. One is something glinting on top of a cliff and the other is an ominous-looking rock shaped like an obelisk.\n";
-                std::cout << "Which do you choose? Enter 1 for the cliff and 2 for the obelisk.\n\n";
+                std::cout << "When you stop, you see two possibilities to investigate. One is a mysterious lake and the other is an ominous-looking rock shaped like an obelisk.\n";
+                std::cout << "Which do you choose? Enter 1 for the lake or 2 for the obelisk.\n\n";
                 std::cin >> choice3;
                 choice1=0;
 
@@ -116,7 +122,7 @@ int main(){
                     };
 
                     while (choice3==2&&choice3n<2){
-                        std::cout << "Are you sure you want to investigate the obelisk? Enter 1 for the cliff and 2 for the obelisk.\n\n";
+                        std::cout << "Are you sure you want to investigate the obelisk? Enter 1 for the cliff or 2 for the obelisk.\n\n";
                         std::cin >> choice3;
                         choice3n++;
                     };
@@ -124,6 +130,41 @@ int main(){
                     if (choice3==2){
                         std::cout << "\nA bolt of lightning leaps out from the obelisk and strikes you. You die.\n\n";
                         std::cout << "Game over.\n";
+                    }
+
+                    else if (choice3==1){
+                        std::cout << "\nYou approach the lake and see an altar. Do you go for a swim or leave an offering on the altar?\n";
+                        std::cout << "Press 1 for swimming or 2 for leaving an offering.\n\n";
+                        std::cin >> choice4;
+
+                        while (choice4<1||choice4>2||std::cin.fail()) // if number is out of range or a string was entered
+                        {
+                            std::cout << "Not a valid answer. Please input 1 or 2.\n";
+                            std::cin.clear();
+                            std::cin.ignore(256, '\n');
+                            std::cin >> choice4;
+                        };
+
+                        int choice4n=1;
+
+                        while (choice4==1&&choice4n<2){
+                        std::cout << "Are you sure you want to go for a swim? Enter 1 for swimming or 2 to leave an offering.\n\n";
+                        std::cin >> choice4;
+                        choice4n++;
+                        };
+
+                        if (choice4==1){
+                            std::cout << "\nA Kraken rises from the depths and pulls you into the deep. You die.\n\n";
+                            std::cout << "Game over.\n";
+                        }
+
+                        else if (choice4==2){
+                            std::cout << "\nYou don't have much, but you leave an offering of a few bronze pieces on the altar.\n";
+                            std::cout << "A mermaid rises from the depths and takes the offering. She smiles at you, and in return leaves a necklace of gleaming pearls.\n";
+                            std::cout << "You put the precious pearls carefully into your bag. You think it was an adventure worth having.\n\n";
+                            std::cout << "THE END\n";
+                        };
+
                     };
             };
     }
