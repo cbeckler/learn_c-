@@ -173,7 +173,7 @@ int main(){
     if (choice1==2){
         std::cout << "\nYou light a torch and the shadows flicker around you.\n";
         std::cout << "There are two ways to go. One path stinks of decay, from the other the sound of running water.\n";
-        std::cout << "Which way do you go? 1 for towards decay or 2 for towards water.\n\n";
+        std::cout << "Which way do you go? Enter 1 for towards decay or 2 for towards water.\n\n";
         std::cin >> choice2;
 
         while (choice2<1||choice2>2||std::cin.fail()) // if number is out of range or a string was entered
@@ -183,5 +183,109 @@ int main(){
             std::cin.ignore(256, '\n');
             std::cin >> choice2;
         };
+
+        int choice2n=1;
+
+        while (choice2==1&&choice2n<2){
+                std::cout << "Are you sure you want to go towards decay? Enter 1 for towards decay or 2 for towards water.\n\n";
+                std::cin >> choice2;
+                choice2n++;
+            };
+
+            if (choice2==1){
+                std::cout << "\nGhouls come out of the crevices and attack you. You die.\n\n";
+                std::cout << "Game over.\n";
+            }
+
+            else if (choice2==2){
+
+                std::cout << "\nYou see an underground river cutting through the cavern. Do you swim in the river, cross to the other side, or stay where you are?\n";
+                std::cout << "What do you do? Enter 1 for swimming in the river, 2 for crossing, or 3 for staying where you are.\n\n";
+                std::cin >> choice3;
+
+                while (choice3<1||choice3>3||std::cin.fail()) // if number is out of range or a string was entered
+                {
+                    std::cout << "Not a valid answer. Please input 1, 2, or 3.\n";
+                    std::cin.clear();
+                    std::cin.ignore(256, '\n');
+                    std::cin >> choice3;
+                };
+
+                int choice3n=1;
+
+                while (choice3==3&&choice3n<2){
+                    std::cout << "Are you sure you want to stay where you are? Enter 1 for swimming, 2 for crossing, or 3 for staying.\n\n";
+                    std::cin >> choice2;
+                    choice3n++;
+                };
+
+                if (choice3==3){
+                    std::cout << "\nAfter some time the river starts running high and floods the cavern, drowning you. You die.\n\n";
+                    std::cout << "Game over.\n";
+                }
+                else if (choice3==1){
+                    std::cout << "\nYou swim through the river into a cave that has two openings. One opening glows faintly, and the other smells of fresh air.\n";
+                    std::cout << "Which opening do you take? Enter 1 for the glowing opening or 2 for fresh air.\n\n";
+                    std::cin >> choice4;
+
+                    while (choice4<1||choice4>2||std::cin.fail()) // if number is out of range or a string was entered
+                    {
+                        std::cout << "Not a valid answer. Please input 1 or 2.\n";
+                        std::cin.clear();
+                        std::cin.ignore(256, '\n');
+                        std::cin >> choice4;
+                    };
+
+                    if (choice4==1){
+                        std::cout << "\nYou enter a cave full of glittering crystals that glow slightly.\n";
+                        std::cout << "You pick up a fallen crystal that feels warm in your hand. You swear you can hear it singing.\n";
+                        std::cout << "You leave the cave with your new treasure. You think it was an adventure worth having.\n\n";
+                        std::cout << "THE END\n";
+                    }
+                    
+                    else if (choice4==2){
+                        std::cout << "\nYou leave the cave and enter a beautiful glade. At the other end, a unicorn is grazing.\n";
+                        std::cout << "You raise your hand slowly and the unicorn comes over to you, putting its nose in your hand before cantering away.\n";
+                        std::cout <<  "You make your way back home, feeling forever changed. You think it was an adventure worth having.\n\n";
+                        std::cout << "THE END\n";
+                    };
+                }
+                
+                else if (choice3==2){
+                    std::cout << "\nYou cross the river and see two different caverns. One holds a treasure, the other holds a sword.\n";
+                    std::cout << "Which cavern do you go into? Enter 1 for the treasure or 2 for the sword.\n\n";  
+                    std::cin >> choice4;
+
+                    while (choice4<1||choice4>2||std::cin.fail()) // if number is out of range or a string was entered
+                    {
+                        std::cout << "Not a valid answer. Please input 1 or 2.\n";
+                        std::cin.clear();
+                        std::cin.ignore(256, '\n');
+                        std::cin >> choice4;
+                    };
+
+                    int choice4n=1;
+
+                    while (choice4==2&&choice4n<2){
+                        std::cout << "Are you sure you want to go for the sword? Enter 1 for the treasure or 2 for the sword.\n\n";
+                        std::cin >> choice4;
+                        choice4n++;
+                    };
+
+                    if (choice4==2){
+                        std::cout << "\nYou pick up the sword and a horn sounds. You've challenged the Goblin King to a duel. You die.\n\n";
+                        std::cout << "Game over.\n";
+                    }
+
+                    else if (choice4==1){
+                        std::cout << "\nYou enter the cave full of treasure and pull out your rucksack. You fill it until it's bulging.\n";
+                        std::cout << "You make your way back home and use the gold to pay for the dowry of your beloved.\n";
+                        std::cout << "As you get married to your true love, you think it was an adventure worth having.\n\n";
+                        std::cout << "THE END\n";
+                    };
+
+                };
+
+            };
     };
 }
