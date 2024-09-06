@@ -6,12 +6,12 @@ int main() {
 
     greet();
 
-    std::string codeword = "Mulder";
+    std::string codeword = "mulder";
     std::string answer = "______";
 
     int misses=0;
 
-    std::vector<char> incorrect = {' '}; 
+    std::vector<char> incorrect;
 
     bool guess=false;
 
@@ -39,7 +39,7 @@ int main() {
         }
         else {
             std::cout << "\nIncorrect! The tractor beam pulls the person in further.\n";
-            incorrect.push_back(letter); 
+            incorrect.push_back(letter);
             misses++;
         }
 

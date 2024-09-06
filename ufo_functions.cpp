@@ -26,11 +26,12 @@ void end_game(std::string answer, std::string codeword) {
 
 void display_status(std::vector<char> incorrect, std::string answer) {
     
-    std::cout << "\nIncorrect guesses: ";
+    std::cout << "\nIncorrect Guesses:\n";
 
-    for (int i=0; i<incorrect.size(), i++;) {
+    for (int i = 0; i < incorrect.size(); i++) {
         std::cout << incorrect[i] << ' ';
     }
+  
 
     std::cout << "\nCodeword: ";
 
